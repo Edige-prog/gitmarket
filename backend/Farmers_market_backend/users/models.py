@@ -69,7 +69,11 @@ class Admin(models.Model):
         return f"Admin: {self.user.username}"
 
 class Farmer(models.Model):
-    user = models.OneToOneField('users.CustomUser', models.CASCADE, primary_key=True)
+    user = models.OneToOneField(
+        'users.CustomUser',
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
     years_of_experience = models.IntegerField(default=1)
     specialization = models.CharField(max_length=255, blank=True, null=True)
     certification_details = models.TextField(blank=True, null=True)
