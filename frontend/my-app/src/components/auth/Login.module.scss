@@ -1,0 +1,25 @@
+*{
+  @apply box-border;
+}
+
+.divider_signin {
+    @apply overflow-visible text-center;
+    &::after {
+      content: "or sign in with email";
+      @apply text-center mt-4 text-sm text-gray-500 relative inline-block -top-7 bg-white px-3;
+    }
+}
+
+.divider_signup {
+  @apply overflow-visible text-center;
+  &::after {
+    content: "or sign up with email";
+    @apply text-center mt-4 text-sm text-gray-500 relative inline-block -top-7 bg-white px-3;
+  }
+}
+  
+
+.fields{
+    @apply py-2 flex flex-col justify-between items-center;
+}
+  

@@ -1,0 +1,86 @@
+.sidebar {
+    @apply fixed left-0 top-0 text-white/80 h-screen
+    bg-white/5 w-64 py-6 shadow-lg whitespace-nowrap overflow-hidden z-10 bg-black;
+
+
+    &.collapsed{
+        .menu {
+            > a {
+                @apply px-2 justify-center;
+
+                &:first-child {
+                    @apply pt-[2rem] mt-[2rem];
+                }
+
+                &:hover{
+                    @apply bg-transparent !important;
+                }
+
+            }
+        }
+
+        .toggle {
+            @apply top-1 left-[1px];
+        }
+
+    }
+
+    &.canHover{
+        .menu {
+            > a {
+                &:hover{
+                    @apply bg-white/10;
+
+                    > svg {
+                        @apply text-orange-400 transition-all duration-300 ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu{
+        > a {
+            @apply flex items-center gap-2.5 p-4 transition-colors 
+            duration-300 ease-in-out;
+
+
+            &:hover{
+                @apply bg-white/10;
+
+                > svg {
+                    @apply text-orange-400 transition-colors duration-300 ease-in-out;
+                }
+            }
+        }
+    }
+
+    .toggle{
+        @apply absolute top-1 right-1 text-white rounded-full cursor-pointer w-12 h-12 flex items-center justify-center opacity-50 transition-opacity duration-300 ease-in-out;
+
+        &:hover{
+            @apply opacity-100;
+        }
+    }
+
+    .profile_navigation{
+        @apply flex items-center mb-4 w-[85%] justify-between;
+        .info{
+            @apply flex justify-between items-center;
+            .photo_wrapper{
+                @apply w-10 h-10 rounded-[50%] overflow-hidden flex justify-center items-center mx-4;
+        
+                .profile_photo{
+                    @apply w-full h-full object-cover object-center;
+                }
+            }
+        }
+
+        &:hover{
+
+            > svg {
+                @apply text-orange-400 transition-colors duration-300 ease-in-out;
+            }
+        }
+    }
+}
